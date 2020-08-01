@@ -1,4 +1,9 @@
 // Write your JavaScript code here!
+function canLaunch(fuelLevelInput, cargoMassInput){
+   if (fuelLevelInput < 10001){
+      document.getElementById("fuelStatus").style.visibility = "visible"
+   }
+}
 
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
