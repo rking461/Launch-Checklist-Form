@@ -11,7 +11,7 @@
             <!-- Fetch some planetary data -->
         </div> 
         <div id="launchForm">
-            <form method="GET">
+            <form>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
                     <label>Pilot Name <input type="text" name="pilotName" id="pilotName"/></label>
                 </div>
@@ -38,28 +38,6 @@
                 </ol>
             </div>
         </div>    
-        <script>
-                let pilotNameInput = document.querySelector("input[name=pilotName]");
-                let copilotNameInput = document.querySelector("input[name=copilotName]");
-                let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
-                let cargoMassInput = document.querySelector("input[name=cargoMass]");
-            window.addEventListener("load", function() {
-            let form = document.querySelector("form");
-             form.addEventListener("submit", function(event) {
-                if (pilotNameInput.value === "" || copilotNameInput.value === ""|| fuelLevelInput.value === "" || cargoMassInput.value === "") {
-                    alert("All fields are required!");
-                    event.preventDefault();
-                }
-                if (isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)){ 
-                    alert("Fuel level and Cargo Mass should be numbers");
-                    event.preventDefault();
-                }
-                
-                 canLaunch(fuelLevelInput.value, cargoMassInput.value)
-            });
-            
-   });
-   
-        </script>
+        <script></script>
     </body>
 </html>
