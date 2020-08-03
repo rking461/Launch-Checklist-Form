@@ -42,8 +42,12 @@ form.addEventListener("submit", function(event) {
       clearList()
    }
    if (isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)){ 
-    alert("Fuel level and Cargo Mass should be numbers");
+    alert("Fuel level and Cargo Mass should be numbers.");
     clearList()
+   }
+   if (typeof(pilotNameInput) !== 'string' || typeof(copilotNameInput) !== 'string'){
+      alert("Pilot and Copilot must be names.");
+      clearList()
    }
 
  canLaunch(fuelLevelInput.value, cargoMassInput.value)
