@@ -21,12 +21,19 @@ function canLaunch(fuelLevelInput, cargoMassInput){
       document.getElementById("launchStatus").innerHTML = `Shuttle Not Ready for Launch.`
       document.getElementById("launchStatus").style.color = "red"
    }
+   if ((isNaN(pilotNameInput.value) === false) || (isNaN(copilotNameInput.value) === false)){ 
+      document.getElementById("copilotStatus").style.visibility = "hidden"
+      document.getElementById("cargoStatus").style.visibility = "hidden"
+      document.getElementById("fuelStatus").style.visibility = "hidden"
+      document.getElementById("pilotStatus").style.visibility = "hidden"
+      document.getElementById("launchStatus").innerHTML = `Awaiting Information Before Launch`
+   }
 }
 
 function clearList(){
    document.getElementById("pilotStatus").style.visibility = "hidden"
    document.getElementById("copilotStatus").style.visibility = "hidden"
-   document.getElementById("fuelLevelStatus").style.visibility = "hidden"
+   document.getElementById("fuelStatus").style.visibility = "hidden"
    document.getElementById("cargoStatus").style.visibility = "hidden"
 }
 let pilotNameInput = document.querySelector("input[name=pilotName]");
@@ -41,15 +48,15 @@ form.addEventListener("submit", function(event) {
       alert("All fields are required!");
       clearList()
    }
+   if ((isNaN(pilotNameInput.value) === false) || (isNaN(copilotNameInput.value) === false)){ 
+      alert("Pilot and Copilot should be names.");
+      clearList()
+   }
    if (isNaN(fuelLevelInput.value) || isNaN(cargoMassInput.value)){ 
     alert("Fuel level and Cargo Mass should be numbers.");
     clearList()
    }
-   if (typeof(pilotNameInput) !== 'string' || typeof(copilotNameInput) !== 'string'){
-      alert("Pilot and Copilot must be names.");
-      clearList()
-   }
-
+   
  canLaunch(fuelLevelInput.value, cargoMassInput.value)
 
 });
